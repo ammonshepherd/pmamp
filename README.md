@@ -1,7 +1,7 @@
 # PMAMP - PhpMyAdmin with Mysql and Php
 - Docker with PHP, MySQL, phpMyAdmin
 
-## Pre-requisits
+## Prerequisites
 - Install and run Docker Desktop
   - [https://www.docker.com/get-started ](https://www.docker.com/get-started)
 
