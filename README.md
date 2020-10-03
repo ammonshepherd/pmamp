@@ -39,5 +39,5 @@ a phpMyAdmin container.
     line in the docker-compose.yml file referencing `seed.sql`. The `dbdata`
     folder will need to be deleted first. This works best if using a mysql dump
     file. Otherwise, the sql file just needs to have valid SQL statments.
-    - `#- ./seed.sql:/docker-entrypoint-initdb.d/database.sql``
+    - `#- ./seed.sql:/docker-entrypoint-initdb.d/database.sql`
 
