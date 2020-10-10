@@ -21,6 +21,8 @@ On the command line (the terminal)
 ```
 - Start the container
   - `docker-compose up`
+  - Or run it in the background to free up the terminal
+    - `docker-compose up -d`
 - To stop the containers
   - press ctrl-c
   - then run `docker-compose down`
