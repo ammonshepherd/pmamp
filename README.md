@@ -1,5 +1,5 @@
-# PMAMP - PhpMyAdmin with Mysql and Php
-- Docker with PHP, MySQL, phpMyAdmin
+# PMAMP - PhpMyadmin with Apache Mysql and Php
+- Docker with Apache, PHP, MySQL, phpMyAdmin
 
 ## Prerequisites
 - Install and run Docker Desktop
@@ -43,3 +43,38 @@ a phpMyAdmin container.
     file. Otherwise, the sql file just needs to have valid SQL statments.
     - `#- ./seed.sql:/docker-entrypoint-initdb.d/database.sql`
 
+
+# Use a real domain name
+It's relatively easy to use this setup with a real domain name for better
+testing and without the need of ports.
+
+## Requirements
+- All of the requirements as above, but an additional image needs to run and
+  using a different docker-compose.yml file. See steps below.
+- Create a new docker network
+  - `docker network create traefikNetwork`
+
+## Run Traefik
+To get this to work easily, we'll use the Traefik image from here: https://hub.docker.com/_/traefik/
+- Documentation is here: https://doc.traefik.io/traefik/
+
+You will run this container just as you did the one for serving PMAMP.
+- Change into the 'traefik' directory
+  - `cd traefik`
+- Start the container
+  - `docker-compose up -d`
+
+To use the domain name version, start the container with the specified compose
+file.
+- While in the terminal and in the 'pmamp' directory, run the command:
+  - `docker-compose -f docker-compose-traefik.yml up -d`
+
+lvh.me is a free service that redirects to localhost, so now you can access the
+site at http://lvh.me instead of http://localhost
+
+phpMyAdmin is now accessible at http://pma.lvh.me
+
+## Notes
+You can have multiple domains and subdomains pointing to a single container
+using the Hosts line in the label section of docker-compose-traefik.yml
+    - "traefik.http.routers.php-apache.rule=Host(`lvh.me`, `fun.lvh.me`, `realdomain.com`)"
