@@ -1,0 +1,77 @@
+html {
+  background: url(intricate-explorer-myG_2wblJxw-unsplash.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: 'Poppins', sans-serif;
+}
+
+.center {
+  text-align: center;
+}
+.card {
+  position: absolute;
+  margin: auto;
+  width: 60%;
+  top: 5%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  background: rgba(200, 200, 200, 0.75);
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4);
+  transition: 0.3s;
+  border-radius: 12px; 
+}
+
+
+.container {
+  padding: 2px 16px;
+  font-size: 1.2em;
+}
+
+.title { 
+  font-family: 'Uncial Antiqua', cursive;
+  font-size: 4em;
+}
+
+.subtitle {
+  font-weight: bold;
+}
+
+.links {
+  margin: 20px;
+}
+
+.button {
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  -webkit-border-radius: 8;
+  -moz-border-radius: 8;
+  border-radius: 8px;
+  text-shadow: 1px 1px 3px #666666;
+  -webkit-box-shadow: 0px 1px 3px #666666;
+  -moz-box-shadow: 0px 1px 3px #666666;
+  box-shadow: 0px 1px 3px #666666;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  border: solid #1f628d 2px;
+  text-decoration: none;
+}
+
+.button:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
