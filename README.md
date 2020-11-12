@@ -29,7 +29,11 @@ On the command line (the terminal)
 - To stop the containers
   - press ctrl-c
   - then run `docker-compose down`
-- View the web pages at [http://lvh.me ](http://lvh.me)
+- View the web pages at [http://lvh.me ](http://lvh.me) or
+  [http://pmamp.lvh.me ](http://pmamp.lvh.me)
+  - You can also edit the /etc/hosts file to allow for using existing domain
+    names. For example, add `127.0.0.1 example.com` to your /etc/hosts file
+    (Linux, Mac) or c:\windows\system32\drivers\etc\hosts ([https://www.howtogeek.com/howto/27350/beginner-geek-how-to-edit-your-hosts-file/ ](Windows)). Now you can browse to [http://example.com ](http://example.com).
 - View phpMyAdmin at [http://pma.lvh.me ](http://pma.lvh.me)
   - type in the db user name and db password to log in
 
