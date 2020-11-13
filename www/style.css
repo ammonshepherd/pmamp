@@ -19,7 +19,7 @@ html {
   top: 50%;
   transform: translate(-50%, -50%);
   padding: 10px;
-  background: rgba(200, 200, 200, 0.75);
+  background: rgba(225, 225, 225, 0.80);
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4);
   transition: 0.3s;
   border-radius: 12px; 
@@ -37,12 +37,11 @@ html {
 }
 
 .flip {
-      display: inline-block; 
-
-      -webkit-transform: matrix(-1, 0, 0, 1, 0, 0);
-    -moz-transform: matrix(-1, 0, 0, 1, 0, 0);
-    -o-transform: matrix(-1, 0, 0, 1, 0, 0);
-    transform: matrix(-1, 0, 0, 1, 0, 0);
+  display: inline-block; 
+  -webkit-transform: matrix(-1, 0, 0, 1, 0, 0);
+  -moz-transform: matrix(-1, 0, 0, 1, 0, 0);
+  -o-transform: matrix(-1, 0, 0, 1, 0, 0);
+  transform: matrix(-1, 0, 0, 1, 0, 0);
 }
 
 .subtitle {
