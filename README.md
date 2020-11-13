@@ -33,7 +33,7 @@ On the command line (the terminal)
   [http://pmamp.lvh.me ](http://pmamp.lvh.me)
   - You can also edit the /etc/hosts file to allow for using existing domain
     names. For example, add `127.0.0.1 example.com` to your /etc/hosts file
-    (Linux, Mac) or c:\windows\system32\drivers\etc\hosts ([https://www.howtogeek.com/howto/27350/beginner-geek-how-to-edit-your-hosts-file/ ](Windows)). Now you can browse to [http://example.com ](http://example.com).
+    (Linux or Mac, [https://www.makeuseof.com/tag/modify-manage-hosts-file-linux/ ](how to edit) ) or c:\windows\system32\drivers\etc\hosts (Windows, [https://www.howtogeek.com/howto/27350/beginner-geek-how-to-edit-your-hosts-file/ ](how to edit) ). Now you can browse to [http://example.com ](http://example.com).
 - View phpMyAdmin at [http://pma.lvh.me ](http://pma.lvh.me)
   - type in the db user name and db password to log in
 
