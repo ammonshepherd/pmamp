@@ -58,10 +58,10 @@ a phpMyAdmin container.
   data to persist between restarts and for hands on access.
   - To restart with a clean database, just delete this folder.
   - To seed the database with a database, tables, and data, just uncomment the
-    line in the docker-compose.yml file referencing `seed.sql`. The `dbdata`
+    line in the docker-compose.yml file referencing `mysql_seed.sql`. The `dbdata`
     folder will need to be deleted first. This works best if using a mysql dump
     file. Otherwise, the sql file just needs to have valid SQL statments.
-    - `#- ./seed.sql:/docker-entrypoint-initdb.d/database.sql`
+    - `#- ./mysql_seed.sql:/docker-entrypoint-initdb.d/mysql_seed.sql`
 
 
 ## Traefik Notes

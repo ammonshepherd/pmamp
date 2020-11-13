@@ -34,6 +34,7 @@ services:
     depends_on:
       - "traefik"
     volumes:
+      #- "./mysql_seed.sql:/docker-entrypoint-initdb.d/mysql_seed.sql"
       - "./dbdata:/var/lib/mysql"
     command: 
       - "--default-authentication-plugin=mysql_native_password"
