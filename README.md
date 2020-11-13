@@ -34,8 +34,8 @@ On the command line (the terminal)
   - You can also edit the /etc/hosts file to allow for using existing domain
     names. For example, add `127.0.0.1 example.com` to your /etc/hosts file
     (Linux or Mac), or c:\windows\system32\drivers\etc\hosts (Windows). Now you can browse to [http://example.com ](http://example.com).
-    - [https://www.makeuseof.com/tag/modify-manage-hosts-file-linux/ ](How to edit the hosts file on Linux/Mac) 
-    - [https://www.howtogeek.com/howto/27350/beginner-geek-how-to-edit-your-hosts-file/ ](How to edit the hosts file on Windows) 
+    - [https://www.makeuseof.com/tag/modify-manage-hosts-file-linux ](How to edit the hosts file on Linux/Mac) 
+    - [https://www.howtogeek.com/howto/27350/beginner-geek-how-to-edit-your-hosts-file ](How to edit the hosts file on Windows) 
 - View phpMyAdmin at [http://pma.lvh.me ](http://pma.lvh.me)
   - type in the db user name and db password to log in
 
