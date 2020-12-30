@@ -1,6 +1,18 @@
 # PMAMP - PhpMyadmin with Apache Mysql and Php
 - Docker with Apache, PHP, MySQL, phpMyAdmin
 
+This set of images creates a container running an Apache Web server with a
+MySQL database backend. PHP is the language of choice in this setup. A running
+copy of phpMyAdmin is included for easy database administration.
+
+This setup makes use of http://lvh.me, which is a free service that seamlessly
+redirects lvh.me and any sub-domains back to your local computer, specifically
+to 127.0.0.1. This makes the nice trick of having your project look like it is
+being hosted at a real domain name. But be aware, nobody else in the world will
+be able to see what you see at lvh.me. It will redirect them to their own
+computer and likely result in an error message in the browser unless they have
+a web server running on their computer.
+
 ## Prerequisites
 - Install and run Docker Desktop
   - [https://www.docker.com/get-started ](https://www.docker.com/get-started)
@@ -32,8 +44,12 @@ On the command line (the terminal)
 - View the web pages at [http://lvh.me ](http://lvh.me) or
   [http://pmamp.lvh.me ](http://pmamp.lvh.me)
   - You can also edit the /etc/hosts file to allow for using existing domain
-    names. For example, add `127.0.0.1 example.com` to your /etc/hosts file
-    ([Linux or Mac](https://www.makeuseof.com/tag/modify-manage-hosts-file-linux/)), or c:\windows\system32\drivers\etc\hosts ([Windows](https://www.howtogeek.com/howto/27350/beginner-geek-how-to-edit-your-hosts-file/)). Now you can browse to [http://example.com ](http://example.com).
+    names. For example, add the following to your /etc/hosts file:
+    - `127.0.0.1 example.com`
+    - How to change your /etc/hosts file:
+      - ([Linux or Mac](https://www.makeuseof.com/tag/modify-manage-hosts-file-linux/)), 
+      - or c:\windows\system32\drivers\etc\hosts ([Windows](https://www.howtogeek.com/howto/27350/beginner-geek-how-to-edit-your-hosts-file/)). 
+    - Now you can browse to [http://example.com ](http://example.com).
 - View phpMyAdmin at [http://pma.lvh.me ](http://pma.lvh.me)
   - type in the db user name and db password to log in
 
