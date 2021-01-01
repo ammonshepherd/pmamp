@@ -25,7 +25,7 @@ services:
       - "./www:/var/www/html/"
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.php-apache.rule=Host(`lvh.me`, `pmamp.lvh.me`, `example.com`)"
+      - "traefik.http.routers.php-apache.rule=Host(`localhost`, `lvh.me`, `pmamp.lvh.me`, `example.com`)"
       - "traefik.http.routers.php-apache.entrypoints=web"
 
   mysql:
