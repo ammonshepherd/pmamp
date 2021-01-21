@@ -60,7 +60,7 @@ On the command line (the terminal)
 - To stop the containers
   - press ctrl-c
   - then run `docker-compose down`
-- View the web pages at [http://lvh.me ](http://lvh.me) or
+- View the web pages at [http://localhost ](http://localhost), [http://lvh.me ](http://lvh.me) or
   [http://pmamp.lvh.me ](http://pmamp.lvh.me)
   - You can also edit the /etc/hosts file to allow for using existing domain
     names. For example, add the following to your /etc/hosts file:
@@ -70,7 +70,7 @@ On the command line (the terminal)
       - or c:\windows\system32\drivers\etc\hosts ([Windows](https://www.howtogeek.com/howto/27350/beginner-geek-how-to-edit-your-hosts-file/)). 
     - Update the docker-compose.yml file to include the domain you added to the
       /etc/hosts file. Add the domain to the line like this:
-      - "traefik.http.routers.php-apache.rule=Host(``lvh.me``, ``fun.lvh.me``, ``example.com``)"
+      - ``"traefik.http.routers.php-apache.rule=Host(`lvh.me`, `fun.lvh.me`, `example.com`)"``
 
     - Now you can browse to [http://example.com ](http://example.com).
 - View phpMyAdmin at [http://pma.lvh.me ](http://pma.lvh.me)
@@ -108,7 +108,7 @@ This uses the Traefik image from here: https://hub.docker.com/_/traefik/
 - Documentation is here: https://doc.traefik.io/traefik/
 - You can have multiple domains and subdomains pointing to a single container
 using the Hosts line in the label section of docker-compose.yml
-    - "traefik.http.routers.php-apache.rule=Host(``lvh.me``, ``fun.lvh.me``, ``realdomain.com``)"
+    - ``"traefik.http.routers.php-apache.rule=Host(`lvh.me`, `fun.lvh.me`, `example.com`)"``
 
 ## lvh.me Notes
 lvh.me is a free service that redirects to localhost, so now you can access the
