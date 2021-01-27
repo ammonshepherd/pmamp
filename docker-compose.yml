@@ -50,7 +50,7 @@ services:
     image: "phpmyadmin/phpmyadmin"
     container_name: "pma"
     depends_on:
-      - "traefik"
+      - "mysql"
     links:
       - "mysql"
     environment:
