@@ -165,6 +165,11 @@ RUN apt-get update && apt-get install -y \
 
 ```
 
+### PHP Settings
+By default the file upload size and post limit size are set to 256MB. If you
+need to change these values, edit the `uploads.ini` file.
+
+
 ## Apache
 Apache is built into the PHP image used and can minimially be altered. To
 install or enable modules, add a line after the list of packages in the
@@ -199,6 +204,9 @@ official DockerHub page [https://hub.docker.com/_/mysql
 ## phpMyAdmin
 For options, see the official DockerHub page
 [https://hub.docker.com/_/phpmyadmin ](https://hub.docker.com/_/phpmyadmin).
+
+- Note in particular the Environment Variables section to update the file
+  upload size and post limit size for PHP. By default, this is set to 256MB.
 
 ## Additional software
 To add aditional software, add it to the Dockerfile. Add packages to the list
