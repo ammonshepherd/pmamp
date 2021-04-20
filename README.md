@@ -13,6 +13,9 @@ be able to see what you see at lvh.me. It will redirect them to their own
 computer and likely result in an error message in the browser unless they have
 a web server running on their computer.
 
+You can also still use the IP address http://127.0.0.1 or http://localhost and
+to access phpMyAdmin use http://pma.localhost
+
 What does this set up contain?
 
 - PHP/Apache image
