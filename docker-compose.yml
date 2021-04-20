@@ -60,7 +60,7 @@ services:
       UPLOAD_LIMIT: "256M"
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.whoami.rule=Host(`pma.lvh.me`)"
+      - "traefik.http.routers.whoami.rule=Host(`pma.localhost`, `pma.lvh.me`)"
       - "traefik.http.routers.whoami.entrypoints=web"
 
 networks:
