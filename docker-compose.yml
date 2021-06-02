@@ -1,69 +1,62 @@
 version: "3.8"
 services:
-  traefik:
-    image: "traefik:latest"
-    container_name: "traefik"
-    command:
-      - "--api.insecure=true"
-      - "--providers.docker=true"
-      - "--providers.docker.exposedbydefault=false"
-      - "--entrypoints.web.address=:80"
-    ports:
-      - "80:80"
-      - "8080:8080"
-    volumes:
-      - "/var/run/docker.sock:/var/run/docker.sock:ro"
-
   php-apache:
     build:
       context: .
     container_name: "php-apache"
     depends_on:
-      - "traefik"
       - "mysql"
     volumes:
-      - "./www:/var/www/html/"
-      - "./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini"
+      - ./var/www:/var/www/html/
+      - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.php-apache.rule=Host(`localhost`, `lvh.me`, `pmamp.lvh.me`, `127.0.0.1`)"
-      - "traefik.http.routers.php-apache.entrypoints=web"
+      - "traefik.docker.network=proxy"
+      - "traefik.http.routers.php-apache-secure.entrypoints=websecure"
+      - "traefik.http.routers.php-apache-secure.rule=Host(`kathy-lin.briskly.ca`)"
 
   mysql:
-    image: "mysql"
-    container_name: "mysql"
-    depends_on:
-      - "traefik"
+    image: mysql:latest
+    container_name: mysql
     volumes:
       #- "./mysql_seed.sql:/docker-entrypoint-initdb.d/mysql_seed.sql"
-      - "./dbdata:/var/lib/mysql"
+      - ./dbdata:/var/lib/mysql
     command: 
       - "--default-authentication-plugin=mysql_native_password"
     environment:
-      MYSQL_ROOT_PASSWORD: "rootPASS"
-      MYSQL_DATABASE: "dbase"
-      MYSQL_USER: "dbuser"
-      MYSQL_PASSWORD: "dbpass"
+      MYSQL_ROOT_PASSWORD: K4thyL1n@2021
+      MYSQL_DATABASE: bcit
+      MYSQL_USER: klin
+      MYSQL_PASSWORD: K4thyL1n@2021
     labels:
       - "traefik.enable=false"
+    networks: 
+      - database
 
   phpmyadmin:
     image: "phpmyadmin/phpmyadmin"
-    container_name: "pma"
+    container_name: pma
     depends_on:
-      - "mysql"
+      - mysql
     links:
-      - "mysql"
+      - mysql
     environment:
-      PMA_HOST: "mysql"
-      PMA_PORT: "3306"
-      UPLOAD_LIMIT: "256M"
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+      UPLOAD_LIMIT: 1024M
+      PMA_USER: root
+      PMA_PASSWORD: secret
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.whoami.rule=Host(`pma.localhost`, `pma.lvh.me`)"
-      - "traefik.http.routers.whoami.entrypoints=web"
+      - "traefik.docker.network=proxy"
+      - "traefik.http.routers.pma-secure.entrypoints=websecure"
+      - "traefik.http.routers.pma-secure.rule=Host(`pma.kathy-lin.briskly.ca`)"
+    networks:
+      - proxy
+      - database
 
 networks:
-  default:
-    external:
-      name: "traefikNetwork"
+  proxy:
+    external: true
+  database:
+    external: false
