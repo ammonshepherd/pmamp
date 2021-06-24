@@ -54,15 +54,18 @@ On the command line (the terminal)
   MYSQL_PASSWORD: "dbpass"
 ```
 
+- The first time you run this, you will need to create a 'dbdata' folder
+  - On the command line, issue the command: `mkdir dbdata`
+  - Or create the folder in your Finder.app (MacOS) or Folder Explorer (Windows) application
 - The first time you run this, you will need to create a new docker network
   - `docker network create traefikNetwork`
 - Start the container
-  - `docker-compose up`
+  - `docker compose up`
   - Or run it in the background to free up the terminal
-    - `docker-compose up -d`
+    - `docker compose up -d`
 - To stop the containers
   - press ctrl-c
-  - then run `docker-compose down`
+  - then run `docker compose down`
 - View the web pages at [http://localhost ](http://localhost), [http://lvh.me ](http://lvh.me) or
   [http://pmamp.lvh.me ](http://pmamp.lvh.me)
   - You can also edit the /etc/hosts file to allow for using existing domain
@@ -124,9 +127,9 @@ site at http://lvh.me as well as http://localhost
 # Software Updates
 To update a specific software package to a different version, change the image
 called in the docker-compose.yml or Dockerfile file. After any changes to
-Dockerfile or docker-compose.yml you will need to run `docker-compose build` or
-add the --build flag the first time you run docker-compose up, like so
-`docker-compose up --build -d`
+Dockerfile or docker-compose.yml you will need to run `docker compose build` or
+add the --build flag the first time you run "docker compose up", like so
+`docker compose up --build -d`
 
 NOTE: When editing the Dockerfile, make sure to add a backslash (`\`) to any
 lines that you add to the RUN command, unless it is the last line.
