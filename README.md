@@ -1,5 +1,6 @@
 # PMAMP - PhpMyadmin with Apache Mysql and Php
-- Docker with Apache, PHP, MySQL, phpMyAdmin
+
+Docker with Apache, PHP, MySQL, phpMyAdmin
 
 This set of images creates a container running an Apache Web server with a
 MySQL database backend. PHP is the language of choice in this setup. A running
@@ -57,7 +58,7 @@ On the command line (the terminal)
 - The first time you run this, you will need to create a 'dbdata' folder
   - On the command line, issue the command: `mkdir dbdata`
   - Or create the folder in your Finder.app (MacOS) or Folder Explorer (Windows) application
-- The first time you run this, you will need to create a new docker network
+- You will also need to create a new docker network
   - `docker network create traefikNetwork`
 - Start the container
   - `docker compose up`
