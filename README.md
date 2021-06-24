@@ -90,7 +90,9 @@ On the command line (the terminal)
     $dsn = "mysql:host=$server;dbname=$dbname";
 
   ```
-  - The server/host/database url is 'mysql' which is the name of the MySQL container. Because the PHP, Apache and Mysql are all in containers, they know to connect to each other through shortcut network names.
+  - The server/host/database url is `mysql` which is the name of the MySQL
+    container. Because the PHP, Apache and Mysql are all in containers, they
+    know to connect to each other through shortcut network names.
 
 ## General Notes 
 - This will run four containers: a proxy container, a PHP-Apache container, a MySQL container and
@@ -201,8 +203,7 @@ RUN apt-get update && apt-get install -y \
 ## MySQL
 Change the image line in docker-compose.yml. To use MySQL 5.6 use `image:
 "mysql:5.6"` in the mysql section (about line 32). For more options, see the
-official DockerHub page [https://hub.docker.com/_/mysql
-](https://hub.docker.com/_/mysql).
+official DockerHub page [https://hub.docker.com/_/mysql ](https://hub.docker.com/_/mysql).
 
 ## phpMyAdmin
 For options, see the official DockerHub page

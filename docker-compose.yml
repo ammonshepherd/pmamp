@@ -65,5 +65,4 @@ services:
 
 networks:
   default:
-    external:
-      name: "traefikNetwork"
+    name: "traefikNetwork"
