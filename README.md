@@ -1,5 +1,6 @@
 # PMAMP - PhpMyadmin with Apache Mysql and Php
-- Docker with Apache, PHP, MySQL, phpMyAdmin
+
+Docker with Apache, PHP, MySQL, phpMyAdmin
 
 This set of images creates a container running an Apache Web server with a
 MySQL database backend. PHP is the language of choice in this setup. A running
@@ -54,15 +55,18 @@ On the command line (the terminal)
   MYSQL_PASSWORD: "dbpass"
 ```
 
-- The first time you run this, you will need to create a new docker network
+- The first time you run this, you will need to create a 'dbdata' folder
+  - On the command line, issue the command: `mkdir dbdata`
+  - Or create the folder in your Finder.app (MacOS) or Folder Explorer (Windows) application
+- You will also need to create a new docker network
   - `docker network create traefikNetwork`
 - Start the container
-  - `docker-compose up`
+  - `docker compose up`
   - Or run it in the background to free up the terminal
-    - `docker-compose up -d`
+    - `docker compose up -d`
 - To stop the containers
   - press ctrl-c
-  - then run `docker-compose down`
+  - then run `docker compose down`
 - View the web pages at [http://localhost ](http://localhost), [http://lvh.me ](http://lvh.me) or
   [http://pmamp.lvh.me ](http://pmamp.lvh.me)
   - You can also edit the /etc/hosts file to allow for using existing domain
@@ -90,7 +94,9 @@ On the command line (the terminal)
     $dsn = "mysql:host=$server;dbname=$dbname";
 
   ```
-  - The server/host/database url is 'mysql' which is the name of the MySQL container. Because the PHP, Apache and Mysql are all in containers, they know to connect to each other through shortcut network names.
+  - The server/host/database url is `mysql` which is the name of the MySQL
+    container. Because the PHP, Apache and Mysql are all in containers, they
+    know to connect to each other through shortcut network names.
 
 ## General Notes 
 - This will run four containers: a proxy container, a PHP-Apache container, a MySQL container and
@@ -122,9 +128,9 @@ site at http://lvh.me as well as http://localhost
 # Software Updates
 To update a specific software package to a different version, change the image
 called in the docker-compose.yml or Dockerfile file. After any changes to
-Dockerfile or docker-compose.yml you will need to run `docker-compose build` or
-add the --build flag the first time you run docker-compose up, like so
-`docker-compose up --build -d`
+Dockerfile or docker-compose.yml you will need to run `docker compose build` or
+add the --build flag the first time you run "docker compose up", like so
+`docker compose up --build -d`
 
 NOTE: When editing the Dockerfile, make sure to add a backslash (`\`) to any
 lines that you add to the RUN command, unless it is the last line.
@@ -201,8 +207,7 @@ RUN apt-get update && apt-get install -y \
 ## MySQL
 Change the image line in docker-compose.yml. To use MySQL 5.6 use `image:
 "mysql:5.6"` in the mysql section (about line 32). For more options, see the
-official DockerHub page [https://hub.docker.com/_/mysql
-](https://hub.docker.com/_/mysql).
+official DockerHub page [https://hub.docker.com/_/mysql ](https://hub.docker.com/_/mysql).
 
 ## phpMyAdmin
 For options, see the official DockerHub page
