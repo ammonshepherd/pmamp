@@ -1,8 +1,7 @@
 version: "3.8"
 services:
   traefik:
-    image: "traefik:latest"
-    container_name: "traefik"
+    image: "traefik:2.5.6"
     command:
       - "--api.insecure=true"
       - "--providers.docker=true"
@@ -17,7 +16,6 @@ services:
   php-apache:
     build:
       context: .
-    container_name: "php-apache"
     depends_on:
       - "traefik"
       - "mysql"
@@ -30,8 +28,7 @@ services:
       - "traefik.http.routers.php-apache.entrypoints=web"
 
   mysql:
-    image: "mysql"
-    container_name: "mysql"
+    image: "mysql:8.0.27"
     depends_on:
       - "traefik"
     volumes:
@@ -49,7 +46,6 @@ services:
 
   phpmyadmin:
     image: "phpmyadmin/phpmyadmin"
-    container_name: "pma"
     depends_on:
       - "mysql"
     links:
