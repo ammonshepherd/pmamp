@@ -29,6 +29,8 @@ services:
 
   mysql:
     image: "mysql:8.0.27"
+    # Uncomment line below if you are using a Mac with the M1 chip
+    #platform: linux/amd64
     depends_on:
       - "traefik"
     volumes:
