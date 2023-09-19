@@ -40,7 +40,7 @@ services:
       - "--default-authentication-plugin=mysql_native_password"
     environment:
       MYSQL_ROOT_PASSWORD: "rootPASS"
-      MYSQL_DATABASE: "dbase"
+      MYSQL_DATABASE: "phpmotors"
       MYSQL_USER: "dbuser"
       MYSQL_PASSWORD: "dbpass"
     labels:
